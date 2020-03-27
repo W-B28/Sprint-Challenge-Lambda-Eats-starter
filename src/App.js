@@ -18,16 +18,16 @@ const App = () => {
         Order Form
         </Link>
         <Route
-        
-        path="/"
+
+         path="/"
         component={Home}
         />
         <Route
 
-        path="/pizza"
+        exact path="/pizza"
         component={Form}
         />
-        // <Form />
+
       </div>
       </>
   );
