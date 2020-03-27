@@ -55,6 +55,12 @@ const addNewPizza= pizza => {
     setFormState([...formState, newPizza]);
   };
 
+  const handleChange = e => {
+    console.log(formState)
+    setFormState({...formState, [e.target.name]:e.target.value})
+    console.log(formState)
+  }
+
 // *******REMEMBER TO ADD onCHAGES TO INPUTS**************}
   return (
     <>
@@ -64,7 +70,8 @@ const addNewPizza= pizza => {
         <input
           type="text"
           name="name"
-          onChange=""
+          onChange={handleChange}
+          value={formState.name}
           minlength="2"
           required
         />
