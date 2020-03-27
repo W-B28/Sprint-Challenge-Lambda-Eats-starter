@@ -40,41 +40,63 @@ export default function Form() {
     });
   }, [formState]);
 
+  const formSubmit = e => {
+     e.preventDefault();
+}
 
+const addNewPizza= pizza => {
+    const newPizza = {
 
+      name: pizza.name,
+      size: pizza.size,
+      toppings: pizza.toppings,
+      instructions: pizza.instructions,
+    };
+    setFormState([...formState, newPizza]);
+  };
 
-
+// *******REMEMBER TO ADD onCHAGES TO INPUTS**************}
   return (
     <>
-    <form>
+    <form onSubmit={formSubmit}>
       <label htmlFor="name">
         Order Name
         <input
           type="text"
           name="name"
+          onChange=""
           minlength="2"
           required
         />
         </label>
 
-        // *******REMEMBER TO ADD onCHAGES TO INPUTS**************
 
         <label htmlFor="sizes">
                Please Select Size Below:
                <select id="sizes" name="sizes" >
-                 <option value="Newsletter">Newsletter</option>
-                 <option value="Yard Work">Yard Work</option>
-                 <option value="Administrative Work">Administrative Work</option>
-                 <option value="Tabling">Tabling</option>
+                 <option value="small">Small</option>
+                 <option value="medium">Medium</option>
+                 <option value="large">Large</option>
+                 <option value="extra large">Extra Large</option>
                </select>
              </label>
 
-
+             <label htmlFor="special-instructions">
+               Special Instructions
+               <textarea
+                 name="special-instructions"
+                 rows="4"
+                 cols="50"
+                 // value={formState.motivation}
+                 // onChange={inputChange}
+               />
+             </label>
 
     </form>
+
+    <button type="submit" >Order Now!</button>
+
 
     </>
   );
 }
-
-// {buttonDisabled}

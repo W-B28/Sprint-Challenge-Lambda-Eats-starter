@@ -13,11 +13,8 @@ function Home(props) {
         className="home-image"
         src="https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80"
         alt="Picture of Pizza"
-
       />
-      <button className="md-button shop-button">
-        Order Now!
-      </button>
+
     </div>
   );
 }
